@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- 터미널 헤더 SVG -->
-<img src="./header_b.svg" width="100%" alt="header"/>
+<img src="./header.svg" width="100%" alt="header"/>
 
 <br/>
 
@@ -9,7 +9,6 @@
 ![Java](https://img.shields.io/badge/Java_21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot_3.x-6DB33F?style=flat-square&logo=springboot&logoColor=white)
 ![Spring Security](https://img.shields.io/badge/Spring_Security-6DB33F?style=flat-square&logo=springsecurity&logoColor=white)
-![QueryDSL](https://img.shields.io/badge/QueryDSL-0070C0?style=flat-square&logo=java&logoColor=white)
 ![Spring Cloud](https://img.shields.io/badge/Spring_Cloud-6DB33F?style=flat-square&logo=spring&logoColor=white)
 ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=flat-square&logo=rabbitmq&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
@@ -73,7 +72,6 @@
 - Spring Cloud 기반 **MSA 아키텍처 설계 및 구축**
 - **Elasticsearch** 기반 고성능 복합 검색 엔진 구축
 - 생성형 AI 모델 연동을 통한 **도서 데이터 증강 파이프라인** 설계
-- 외부 트래픽 제어를 위한 **Redis 기반 Rate Limiter** 직접 구현
 - **Docker & GitHub Actions**를 활용한 CI/CD 파이프라인 구축
 
 #### 💡 문제 해결 사례
@@ -100,11 +98,3 @@
 - 사소한 기능 하나라도 **사용자의 편의성**을 최우선으로 고민하는 개발자
 - 건강한 소통을 통해 합리적으로 역할을 분담하고 **시스템으로 돌아가는 팀워크**를 만드는 인재
 
----
-
-<div align="center">
-
-<!-- 터미널 헤더 SVG -->
-<img src="./footer_b.svg" width="100%" alt="header"/>
-
-<br/>

@@ -111,37 +111,37 @@
 
   <!-- Main Name -->
   <text
-          x="430" y="112"
-          text-anchor="middle"
-          font-family="'Arial Black', 'Arial Bold', sans-serif"
-          font-weight="900"
-          font-size="72"
-          letter-spacing="6"
-          fill="url(#nameGrad)"
-          filter="url(#nameGlow)"
+    x="430" y="112"
+    text-anchor="middle"
+    font-family="'Arial Black', 'Arial Bold', sans-serif"
+    font-weight="900"
+    font-size="72"
+    letter-spacing="6"
+    fill="url(#nameGrad)"
+    filter="url(#nameGlow)"
   >JEON YUJIN</text>
 
   <!-- Sub title -->
   <text
-          x="430" y="140"
-          text-anchor="middle"
-          font-family="'Courier New', monospace"
-          font-size="13"
-          fill="rgba(255,255,255,0.55)"
-          letter-spacing="5"
+    x="430" y="140"
+    text-anchor="middle"
+    font-family="'Courier New', monospace"
+    font-size="13"
+    fill="rgba(255,255,255,0.55)"
+    letter-spacing="5"
   >— backend engineer —</text>
 
-  <!-- Tags -->
-  <!-- MSA tag -->
-  <rect x="282" y="153" width="56" height="24" rx="12" fill="rgba(167,139,250,0.15)" stroke="rgba(167,139,250,0.45)" stroke-width="1"/>
-  <text x="310" y="169" text-anchor="middle" font-family="'Arial', sans-serif" font-weight="700" font-size="11" fill="#a78bfa" letter-spacing="1">MSA</text>
+  <!-- Tags: 총 너비 = 64 + 8 + 70 + 8 + 136 = 286, 시작 x = (860-286)/2 = 287 -->
+  <!-- MSA tag: width=64 -->
+  <rect x="287" y="153" width="64" height="24" rx="12" fill="rgba(167,139,250,0.15)" stroke="rgba(167,139,250,0.45)" stroke-width="1"/>
+  <text x="319" y="169" text-anchor="middle" font-family="'Arial', sans-serif" font-weight="700" font-size="11" fill="#a78bfa" letter-spacing="1">MSA</text>
 
-  <!-- DDD tag -->
-  <rect x="348" y="153" width="56" height="24" rx="12" fill="rgba(244,114,182,0.15)" stroke="rgba(244,114,182,0.45)" stroke-width="1"/>
-  <text x="376" y="169" text-anchor="middle" font-family="'Arial', sans-serif" font-weight="700" font-size="11" fill="#f472b6" letter-spacing="1">DDD</text>
+  <!-- CI/CD tag: width=70 -->
+  <rect x="359" y="153" width="70" height="24" rx="12" fill="rgba(244,114,182,0.15)" stroke="rgba(244,114,182,0.45)" stroke-width="1"/>
+  <text x="394" y="169" text-anchor="middle" font-family="'Arial', sans-serif" font-weight="700" font-size="11" fill="#f472b6" letter-spacing="1">CI / CD</text>
 
-  <!-- System Design tag -->
-  <rect x="414" y="153" width="122" height="24" rx="12" fill="rgba(251,146,60,0.15)" stroke="rgba(251,146,60,0.45)" stroke-width="1"/>
-  <text x="475" y="169" text-anchor="middle" font-family="'Arial', sans-serif" font-weight="700" font-size="11" fill="#fb923c" letter-spacing="1">SYSTEM DESIGN</text>
+  <!-- System Design tag: width=136 -->
+  <rect x="437" y="153" width="136" height="24" rx="12" fill="rgba(251,146,60,0.15)" stroke="rgba(251,146,60,0.45)" stroke-width="1"/>
+  <text x="505" y="169" text-anchor="middle" font-family="'Arial', sans-serif" font-weight="700" font-size="11" fill="#fb923c" letter-spacing="1">SYSTEM DESIGN</text>
 
 </svg>
