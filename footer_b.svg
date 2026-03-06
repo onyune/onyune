@@ -1,0 +1,51 @@
+<svg width="860" height="80" viewBox="0 0 860 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ftrBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#24243e"/>
+      <stop offset="100%" style="stop-color:#0f0c29"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="80" fill="url(#ftrBg)" rx="16"/>
+
+  <!-- Top border glow line -->
+  <line x1="0" y1="1" x2="860" y2="1" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+
+  <!-- Ambient glow -->
+  <ellipse cx="430" cy="40" rx="300" ry="30" fill="rgba(167,139,250,0.05)"/>
+
+  <!-- Dot + label: Java 21 -->
+  <circle cx="238" cy="40" r="4" fill="#a78bfa">
+    <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="248" y="45" font-family="'Courier New', monospace" font-size="11" fill="rgba(167,139,250,0.7)" letter-spacing="2">JAVA 21</text>
+
+  <!-- Separator -->
+  <text x="318" y="45" font-family="'Courier New', monospace" font-size="11" fill="rgba(255,255,255,0.1)">·</text>
+
+  <!-- Dot + label: Spring Boot -->
+  <circle cx="336" cy="40" r="4" fill="#f472b6">
+    <animate attributeName="opacity" values="1;0.4;1" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+  </circle>
+  <text x="346" y="45" font-family="'Courier New', monospace" font-size="11" fill="rgba(244,114,182,0.7)" letter-spacing="2">SPRING BOOT</text>
+
+  <!-- Separator -->
+  <text x="456" y="45" font-family="'Courier New', monospace" font-size="11" fill="rgba(255,255,255,0.1)">·</text>
+
+  <!-- Dot + label: Elasticsearch -->
+  <circle cx="474" cy="40" r="4" fill="#fb923c">
+    <animate attributeName="opacity" values="1;0.4;1" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+  </circle>
+  <text x="484" y="45" font-family="'Courier New', monospace" font-size="11" fill="rgba(251,146,60,0.7)" letter-spacing="2">ELASTICSEARCH</text>
+
+  <!-- Separator -->
+  <text x="618" y="45" font-family="'Courier New', monospace" font-size="11" fill="rgba(255,255,255,0.1)">·</text>
+
+  <!-- Dot + label: Docker -->
+  <circle cx="635" cy="40" r="4" fill="#facc15">
+    <animate attributeName="opacity" values="1;0.4;1" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="645" y="45" font-family="'Courier New', monospace" font-size="11" fill="rgba(250,204,21,0.7)" letter-spacing="2">DOCKER</text>
+
+</svg>
