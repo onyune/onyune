@@ -83,7 +83,7 @@
 
 --- 
 
-### <img src="./refill.png" height="20" style="vertical-align:middle"/> — 프랜차이즈 재고관리 시스템 (Serverless 기반)
+### <img src="./refill.png" height="20" style="vertical-align:middle"/> Re:fill — 프랜차이즈 재고관리 시스템 (Serverless 기반)
 > 기간: 2025.03.10 ~ 2025.06.06 
 > 
 > 역할: **팀장 (PM) 및 백엔드 개발 (4인 프로젝트)**
