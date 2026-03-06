@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- 터미널 헤더 SVG -->
-<img src="./header.svg" width="100%" alt="header"/>
+<img src="resource/header.svg" width="100%" alt="header"/>
 
 <br/>
 
