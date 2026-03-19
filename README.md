@@ -110,6 +110,19 @@
 
 ---
 
+## 💬 NHN Shopping Mall — Java Servlet 기반 쇼핑몰 시스템
+> 기간: 2026.03.09 ~ 2026.03.20 (2주)
+> 역할: 백엔드 개발 (2인 팀 프로젝트)
+
+### 🔑 기여 및 특징
+- Spring MVC의 동작 원리를 이해하기 위해 **FrontServlet + ControllerFactory 기반 커스텀 MVC 프레임워크를 직접 설계**하고, 이후 Spring MVC로 마이그레이션했습니다.
+- Java Reflection API와 커스텀 `@RequestMapping` 어노테이션을 활용해 **URL·HTTP Method 기반 컨트롤러 자동 탐색·등록 시스템**을 구현했습니다.
+- `ThreadLocal`을 활용한 `DbConnectionThreadLocal`로 **요청 단위 DB 커넥션 관리 및 트랜잭션(commit/rollback) 처리**를 구현해 데이터 정합성을 보장했습니다.
+- `HttpFilter`를 활용해 인코딩, 인증, 권한(ROLE_ADMIN/ROLE_USER) 검사를 **필터 체인으로 일괄 처리**했습니다.
+- 포인트 지급 로직을 **WorkerThread + BlockingQueue 구조로 분리**해 메인 요청 흐름과의 결합도를 낮추고 비동기 처리했습니다.
+
+---
+
 ## 🚀 성장 목표
 - 기술적 깊이를 더해 회사가 필요로 하는 **신기술과 아키텍처를 선제적으로 학습**하는 개발자
 - 사소한 기능 하나라도 **사용자의 편의성**을 최우선으로 고민하는 개발자
