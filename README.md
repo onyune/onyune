@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="resource/header.svg" width="100%" alt="Jeon Yu-Jin — Backend Developer"/>
+<img src="resource/header.svg?v=2" width="100%" alt="Jeon Yu-Jin — Backend Developer"/>
 
 </div>
 
