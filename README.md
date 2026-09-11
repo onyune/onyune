@@ -8,13 +8,14 @@
 
 ## About Me
 
-**어제보다 더 나은 코드를 고민하는 백엔드 개발자 전유진입니다.**
+**동시성·장애 상황에서도 안정적으로 동작하는 구조를 설계하는 백엔드 개발자입니다.**
 
-정해진 방법을 그대로 따르기보다, 캐시 전략이나 데이터 적재 방식처럼 순간마다 직접 비교하고 판단하며 문제를 구조로 해결하는 데 집중합니다.
-앞으로도 기능 구현에 그치지 않고, **트래픽이 몰리는 상황에서도 끊임없이 동작하는 백엔드 구조를 설계하는 개발자**가 되고자 합니다.
+도서 커머스 플랫폼에서 동시성 병목을 해결해 TPS를 **19.87배** 끌어올렸고, AIoT 알림 서비스에서는 N+1 쿼리를 배치 조회로 묶어 응답 속도를 **14.2배** 개선했습니다.
+JUnit5·Mockito로 두 서비스 모두 테스트 커버리지 **84% 이상**을 유지합니다.
 
-- 🏫 조선대학교 AI소프트웨어학부 (컴퓨터공학전공) · GPA 4.07 / 4.5
-- 🎓 NHN Academy — Java Backend 12기 수료 · AIOT 웹서비스 개발자 과정
+- 🏫 조선대학교 AI소프트웨어학부(컴퓨터공학전공) 학사 졸업 (2026.02) · GPA 4.07 / 4.5
+- 🎓 NHN Academy Java Backend 12기 수료 (2025.07 ~ 2025.12)
+- 🎓 NHN Academy AIoT 3기 수료 (2026.01 ~ 2026.09)
 - 📫 wjsdbwls0303@gmail.com
 
 ---
@@ -28,6 +29,7 @@
 ![Spring Cloud](https://img.shields.io/badge/Spring_Cloud-6DB33F?style=flat-square&logo=spring&logoColor=white)
 ![Spring Security](https://img.shields.io/badge/Spring_Security-6DB33F?style=flat-square&logo=springsecurity&logoColor=white)
 ![Spring Data JPA](https://img.shields.io/badge/Spring_Data_JPA-6DB33F?style=flat-square&logo=spring&logoColor=white)
+![Spring AI](https://img.shields.io/badge/Spring_AI-6DB33F?style=flat-square&logo=spring&logoColor=white)
 
 **Data & Messaging**
 
@@ -40,13 +42,50 @@
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white)
 ![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?style=flat-square&logo=sonarqube&logoColor=white)
 ![JUnit5](https://img.shields.io/badge/JUnit5-25A162?style=flat-square&logo=junit5&logoColor=white)
 
 ---
 
-## Featured Project
+## Featured Projects
+
+### <img src="resource/4iren.png" height="26" align="center"/> &nbsp;4iren — 강의실 환경 AIoT 플랫폼
+
+> 강의실별 환경 데이터를 수집·검증해 AI 판단과 알림으로 잇는 AIoT 플랫폼 · 2026.07.06 ~ 2026.09.16 · 11주 · 9인 협업
+> **역할: Notification·Payment 서비스 설계·구현** (Java 약 2.9만 라인 · 131 commits)
+
+**Tech** · Java 21 · Spring Boot · Spring Cloud · Spring AI · MySQL · Redis · Elasticsearch · RabbitMQ · Resilience4j · Docker · JUnit5 · Mockito · SonarQube
+
+두 서비스를 오가며 겪은 **4가지 핵심 문제**를 구조적으로 해결했습니다.
+
+**1. 배치 조회로 N+1 문제 해결**
+- **문제** · 피드백 500건 조회 요청 1회에 SQL 쿼리 1,503개 발생
+- **원인** · 건별 지연 로딩으로 로그마다 점수·스냅샷·외부날씨를 각각 조회(1+3N)
+- **해결** · In절 배치 조회로 묶고 조회·CSV 변환 책임을 분리 → **쿼리 수 1,503개 → 4개 고정**, 평균 응답 **322.44ms → 22.74ms (14.2배 ↓)**
+
+**2. ChatClient 빈 스코프 관리**
+- **문제** · Intent/Feedback 두 AI Agent가 같은 Builder 빈을 공유해 `conversationId cannot be null` 예외 발생
+- **원인** · `DefaultChatClientBuilder`가 스펙 객체 하나를 필드로 보유, `defaultAdvisors()`가 복사 없이 addAll
+- **해결** · Builder에 `@Scope("prototype")` 적용 → Agent가 몇 개로 늘어도 별도 설정 없이 항상 격리된 인스턴스 주입
+
+**3. 발행·처리 실패 관측 파이프라인**
+- **문제** · 컨테이너 로그는 텍스트라 원인별·큐별 집계가 안 되고 재처리용 payload도 못 꺼냄
+- **원인** · 알림·권한변경 이벤트 유실은 사용자가 재요청할 수 없어 개발자 개입이 필수
+- **해결** · 재시도 소진 시 원문·원인을 ES에 구조화 적재, 개발자 알림은 앱이 아닌 Grafana가 전담(서비스 자신이 죽어도 알림 가능) → Payment 발행 실패도 3단계로 구분 색인해 동일 파이프라인에 연결
+
+**4. 알림 발송 디바운스 배치**
+- **문제** · 비긴급 알림이 산발적으로 발행되면 짧은 시간에 한 유저에게 메시지가 연달아 발송
+- **원인** · 폴링은 자원 낭비, 즉시 발송은 스팸처럼 느껴짐
+- **해결** · Redis 버퍼(RPUSH) + 컨슈머 없는 대기 큐의 TTL 만료를 DLX로 흘려보내는 방식으로 **유저 단위 3분 지연 배치** 구성, 복합 유니크 키로 재시도 시 중복 발송 차단
+
+**그 외 성과**
+- **테스트** · JUnit5 · Mockito 기반 **Notification 84.0% · Payment 92.0%** 커버리지 달성
+- **협업** · GitHub Projects 단일 보드로 9인 · 10개 서비스 이슈(329건) 트래킹, 매주 기술 세미나로 지식 공유
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/nhnacademy-aiot3-4iren)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-3fb950?style=flat-square&logo=googlechrome&logoColor=white)](https://4iren.site)
+
+---
 
 ### <img src="resource/Book2OnAndOn.png" height="26" align="center"/> &nbsp;Book2OnAndOn — MSA 기반 도서 커머스 플랫폼
 
