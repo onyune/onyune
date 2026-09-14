@@ -42,3 +42,18 @@
 - `ThreadLocal` 기반 `DbConnectionThreadLocal`로 **요청 단위 DB 커넥션 관리 및 트랜잭션(commit/rollback) 처리**
 - `HttpFilter`로 인코딩, 인증, 권한(ROLE_ADMIN/ROLE_USER) 검사를 **필터 체인으로 일괄 처리**
 - 포인트 지급 로직을 **WorkerThread + BlockingQueue 구조로 분리**해 메인 요청 흐름과 결합도를 낮추고 비동기 처리
+
+---
+
+## AI Library — 공공 도서 데이터 기반 AI 검색 플랫폼 (RAG · Vector · MCP)
+
+> 기간: 2026.06.22 ~ 2026.07.02
+> 역할: **백엔드 개발 (4인 팀 프로젝트, batch / core / telegram 멀티 레포)**
+
+**Tech** · Java 21 · Spring Boot 3.5 · Spring AI (Google GenAI / Ollama) · PostgreSQL + pgvector · Redis · Caffeine · RabbitMQ · JPA / QueryDSL · Telegram Bot API · KOMORAN
+
+- 키워드 → 벡터 → 하이브리드 → RAG로 이어지는 검색을 **Strategy 패턴(Keyword/Vector/Hybrid/Auto)** 으로 설계·구현
+- 사용자 피드백 기반 **선호도 벡터(User Preference Vector)** 를 계산해 개인화 랭킹에 반영
+- **Redis 기반 시멘틱 캐싱** 도입 및 캐시 임계치 튜닝으로 벡터 검색 비용 절감
+- Telegram Bot에 **의도 분석(Intent) 틀**을 붙여 대화형 검색 UI와 피드백 수집 흐름 구현
+- Spring AI **`@Tool` 기반 오케스트레이션**으로 도서관정보나루 API 17종을 8개 Function으로 통합
