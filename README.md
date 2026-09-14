@@ -1,8 +1,6 @@
-<div align="center">
+# Jeon Yu-Jin · Backend Developer
 
-<img src="resource/header.svg?v=2" width="100%" alt="Jeon Yu-Jin — Backend Developer"/>
-
-</div>
+Designing resilient, event-driven backends — Java 21 · Spring Boot · MSA · Redis · RabbitMQ · Elasticsearch
 
 ---
 
