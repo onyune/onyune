@@ -1,6 +1,15 @@
-# Jeon Yu-Jin · Backend Developer
+<div align="center">
 
-Designing resilient, event-driven backends — Java 21 · Spring Boot · MSA · Redis · RabbitMQ · Elasticsearch
+# 🧑‍💻 Jeon Yu-Jin | Backend Developer
+
+
+Spring 기반으로 동시성·장애 상황에서도 안정적으로 동작하는 구조를 설계합니다
+
+TPS **19.87배** 개선 · N+1 쿼리 응답속도 **14.2배** 개선 · 테스트 커버리지 **84%+**
+
+[![Email](https://img.shields.io/badge/Email-wjsdbwls0303%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:wjsdbwls0303@gmail.com)
+
+</div>
 
 ---
 
@@ -14,7 +23,6 @@ JUnit5·Mockito로 두 서비스 모두 테스트 커버리지 **84% 이상**을
 - 🏫 조선대학교 AI소프트웨어학부(컴퓨터공학전공) 학사 졸업 (2026.02) · GPA 4.07 / 4.5
 - 🎓 NHN Academy Java Backend 12기 수료 (2025.07 ~ 2025.12)
 - 🎓 NHN Academy AIoT 3기 수료 (2026.01 ~ 2026.09)
-- 📫 wjsdbwls0303@gmail.com
 
 ---
 
@@ -87,6 +95,7 @@ JUnit5·Mockito로 두 서비스 모두 테스트 커버리지 **84% 이상**을
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/nhnacademy-aiot3-4iren)
 [![Live Demo](https://img.shields.io/badge/Live_Demo-3fb950?style=flat-square&logo=googlechrome&logoColor=white)](https://4iren.site)
+[![Notion](https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white)](https://4iren.notion.site/4-iren-395f42d4653280aeb412f3dcec27aa77)
 
 ---
 
